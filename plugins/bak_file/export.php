@@ -9,10 +9,7 @@ $result = Sql_query("SELECT * FROM {$tables['admin']} where id = $id");
 $data = sql_fetch_assoc($result);
 $privileges = unserialize($data['privileges']);
 
-if (!$privileges['export_all_list']) {	
-	  echo Error(s('User cannot not permission.'));
-	return ;
-}
+
 $fromdate = '';
 $todate = '';
 $from = new date('from');
@@ -30,6 +27,12 @@ if (isset($_REQUEST['list'])) {
 }
 
 $access = accessLevel('export');
+if (!$privileges['export_all_list']) {	
+	  $access='owner';
+	  echo Error(s('User cannot not permission.'));
+	return ;
+}
+
 //
 
 switch ($check_user) {
