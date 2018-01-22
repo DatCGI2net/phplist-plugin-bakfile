@@ -1,0 +1,1 @@
+a:4:{s:10:"installUrl";s:71:"https://github.com/nthanhsang/phplist-plugin-bakfile/archive/master.zip";s:9:"developer";s:10:"sangnguyen";s:11:"projectName";s:22:"phplist-plugin-bakfile";s:11:"installDate";i:1516613637;}
