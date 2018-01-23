@@ -3,9 +3,9 @@ class AdminExportLimit extends phplistPlugin
 {
   public $name = "AdminExportLimit file plugin for phpList.";
   public $coderoot = '';
-  public $version = "0.1";
+  public $version = "1.0";
   public $authors = 'nthanhsang';
-  public $enabled = 1;
+  public $enabled = 0;
   public $description = 'backup file admin.php connect.php export.php in admin directory';
   private $numcriterias = 0;
   public $file_admin="admin.php";
