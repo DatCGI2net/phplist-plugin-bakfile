@@ -907,11 +907,15 @@ function contextMenu()
             $GLOBALS['context_menu'] = $GLOBALS['plugins'][$_GET['pi']]->adminMenu();
         }
     }
-
+	$id=$_SESSION['logindetails']['id'];
+	$result = Sql_query("SELECT * FROM {$GLOBALS['tables']['admin']} where id = $id");	
+	$data = sql_fetch_assoc($result);
+	$privileges = unserialize($data['privileges']);
     foreach ($GLOBALS['context_menu'] as $page => $desc) {
         if (!$desc) {
             continue;
         }
+		if($page =='export' and !$privileges['export_all_list']){continue;}
         $link = PageLink2($page, $GLOBALS['I18N']->pageTitle($desc));
 		
         if ($link) {
