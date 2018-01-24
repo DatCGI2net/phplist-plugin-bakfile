@@ -72,7 +72,7 @@ function activate(){
 }
 function upgrade($previous) {
 	file_put_contents("test.log", "update:", FILE_APPEND);
-    parent::initialise();
+    $this->initialise();
     return true;
   }	
 public function bak_copy_file($file,$check){
