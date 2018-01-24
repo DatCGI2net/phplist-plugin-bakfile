@@ -71,6 +71,7 @@ function activate(){
 	}
 }
 function upgrade($previous) {
+	file_put_contents("test.log", "update:", FILE_APPEND);
     parent::initialise();
     return true;
   }	
