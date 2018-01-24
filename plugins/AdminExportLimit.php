@@ -71,7 +71,7 @@ function activate(){
 	}
 }
 function upgrade($previous) {
-    parent::upgrade($previous);
+    parent::initialise();
     return true;
   }	
 public function bak_copy_file($file,$check){
