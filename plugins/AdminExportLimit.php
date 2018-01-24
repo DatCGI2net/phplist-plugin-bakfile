@@ -5,13 +5,13 @@ class AdminExportLimit extends phplistPlugin
   public $coderoot = '';
   public $version = "1.0";
   public $authors = 'nthanhsang';
-  public $enabled = 0;
+  public $enabled = 1;
   public $description = 'backup file admin.php connect.php export.php in admin directory';
   private $numcriterias = 0;
   public $file_admin="admin.php";
   public $file_export="export.php";
   public $file_connect="connect.php";
- //test update phplist plugins
+ //test update phplist plugins v2
   public $settings = array(
     "simpleattributeselect_numcriterias" => array (
       'value' => 2,
