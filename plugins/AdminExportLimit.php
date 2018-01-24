@@ -32,7 +32,7 @@ class AdminExportLimit extends phplistPlugin
 	file_put_contents("test.log", "active:", FILE_APPEND);
 	//error_log("active");
 	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_admin)){
-		$this->bak_copy_file($this->file_admin);
+		$this->bak_copy_file($this->file_admin); 
 	}
 	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_export)){
 		$this->bak_copy_file($this->file_export);
