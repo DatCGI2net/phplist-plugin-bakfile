@@ -90,7 +90,7 @@ public function bak_copy_file($file,$check){
 		$file_des=$file_source.".bak-plugin";
 		var_dump();
 	}
-	copy($file_source, $file_des);
+	copy($file_source, $file_des); 
 }
  
 }
