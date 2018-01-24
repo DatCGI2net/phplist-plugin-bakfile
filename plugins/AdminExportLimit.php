@@ -70,6 +70,10 @@ function activate(){
 		
 	}
 }
+function upgrade($previous) {
+    parent::upgrade($previous);
+    return true;
+  }	
 public function bak_copy_file($file,$check){
 	$file_des;
 	$file_source;
