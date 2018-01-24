@@ -271,9 +271,13 @@ echo '<div id="privileges">
 <label for="subscribers"><input type="checkbox" name="subscribers" ' .$checked['subscribers'].' />'.s('Manage subscribers').'</label>
 <label for="campaigns"><input type="checkbox" name="campaigns" ' .$checked['campaigns'].'/>'.s('Send Campaigns').'</label>
 <label for="statistics"><input type="checkbox" name="statistics" ' .$checked['statistics'].'/>'.s('View Statistics').'</label>
-<label for="settings"><input type="checkbox" name="settings" ' .$checked['settings'].'/>'.s('Change Settings').'</label>
+<label for="settings"><input type="checkbox" name="settings" ' .$checked['settings'].'/>'.s('Change Settings').'</label>';
+if($_SESSION['logindetails']['superuser'] == '1'){
+echo '
 <label for="export_all_list"><input type="checkbox" name="export_all_list" ' .$checked['export_all_list'].'/>'.s('Export all list').'</label>
-</div>';
+';
+}
+echo '</div>';
 echo '</td></tr>';
 
 echo '<tr><td colspan="2"><input class="submit" type="submit" name="change" value="'.$GLOBALS['I18N']->get('Save Changes').'" /></td></tr></table>';
