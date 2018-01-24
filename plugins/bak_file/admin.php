@@ -285,4 +285,4 @@ echo '<tr><td colspan="2"><input class="submit" type="submit" name="change" valu
 echo '</div>'; // content
 echo '</div>'; // panel
 
-echo '</form>';
+echo '</form>'; 
