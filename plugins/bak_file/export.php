@@ -27,9 +27,10 @@ if (isset($_REQUEST['list'])) {
 }
 
 $access = accessLevel('export');
-if (!$privileges['export_all_list']) {	
+
+if (!$privileges['export_all_list'] and !$data['superuser'] == '1') {	
 	  $access='owner';
-	  echo Error(s('User cannot not permission.'));
+	  echo Error(s('You do not have permission to access this feature.'));
 	return ;
 }
 
