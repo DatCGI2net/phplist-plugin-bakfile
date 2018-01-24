@@ -3,15 +3,15 @@ class AdminExportLimit extends phplistPlugin
 {
   public $name = "AdminExportLimit file plugin for phpList.";
   public $coderoot = '';
-  public $version = "1.0";
+  public $version = "2.1";
   public $authors = 'nthanhsang';
   public $enabled = 1;
   public $description = 'backup file admin.php connect.php export.php in admin directory';
-  private $numcriterias = 0;
+  private $numcriterias = 1;
   public $file_admin="admin.php";
   public $file_export="export.php";
   public $file_connect="connect.php";
- //test update phplist plugins v2
+ //test update phplist plugins v2..
   public $settings = array(
     "simpleattributeselect_numcriterias" => array (
       'value' => 2,
