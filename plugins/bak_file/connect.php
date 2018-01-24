@@ -2329,4 +2329,4 @@ class timer
             return sprintf('%0.10f', $elapsed);
         }
     }
-}
+} 
