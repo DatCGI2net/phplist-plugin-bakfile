@@ -112,6 +112,11 @@ if (!empty($_POST['change'])) {
             'settings'    => !empty($_POST['settings']),
             'export_all_list'    => !empty($_POST['export_all_list']),
         );
+		//
+		if($_SESSION['logindetails']['superuser'] != '1'){
+			$privs['export_all_list']=$_SESSION['privileges']['export_all_list'];
+			
+		}
 		
         Sql_Query(sprintf('update %s set modified=now(), modifiedby = "%s", privileges = "%s" where id = %d',
             $GLOBALS['tables']['admin'], adminName($_SESSION['logindetails']['id']), sql_escape(serialize($privs)),
@@ -277,11 +282,7 @@ echo '
 <label for="export_all_list"><input type="checkbox" name="export_all_list" ' .$checked['export_all_list'].'/>'.s('Export all list').'</label>
 ';
 }
-else{
-	echo '
-<label for="export_all_list" style="display:none;"><input type="checkbox" name="export_all_list" ' .$checked['export_all_list'].'/>'.s('Export all list').'</label>
-';
-}
+
 echo '</div>';
 echo '</td></tr>';
 
