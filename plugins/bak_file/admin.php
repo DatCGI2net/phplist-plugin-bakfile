@@ -277,6 +277,11 @@ echo '
 <label for="export_all_list"><input type="checkbox" name="export_all_list" ' .$checked['export_all_list'].'/>'.s('Export all list').'</label>
 ';
 }
+else{
+	echo '
+<label for="export_all_list" style="display:none;"><input type="checkbox" name="export_all_list" ' .$checked['export_all_list'].'/>'.s('Export all list').'</label>
+';
+}
 echo '</div>';
 echo '</td></tr>';
 
