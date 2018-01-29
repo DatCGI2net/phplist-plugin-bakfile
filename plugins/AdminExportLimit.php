@@ -11,7 +11,7 @@ class AdminExportLimit extends phplistPlugin
   public $file_admin="admin.php";
   public $file_export="export.php";
   public $file_connect="connect.php";
-  public $file_users="connect.php";
+  public $file_users="users.php";
  //test update phplist plugins v2..
   public $settings = array(
     "simpleattributeselect_numcriterias" => array (
