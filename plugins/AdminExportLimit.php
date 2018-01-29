@@ -11,6 +11,7 @@ class AdminExportLimit extends phplistPlugin
   public $file_admin="admin.php";
   public $file_export="export.php";
   public $file_connect="connect.php";
+  public $file_users="connect.php";
  //test update phplist plugins v2..
   public $settings = array(
     "simpleattributeselect_numcriterias" => array (
@@ -50,6 +51,9 @@ class AdminExportLimit extends phplistPlugin
 	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_connect)){
 		$this->bak_copy_file($this->file_connect,1);
 	}
+	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_users)){
+		$this->bak_copy_file($this->file_users,1);
+	}
 	
 	parent::initialise();
   } 
@@ -66,6 +70,9 @@ function activate(){
 		}
 		if (file_exists(dirname(dirname(__FILE__))."/".$this->file_connect.".bak-plugin")){
 			$this->bak_copy_file($this->file_connect,2);
+		}
+		if (file_exists(dirname(dirname(__FILE__))."/".$this->file_users.".bak-plugin")){
+			$this->bak_copy_file($this->file_users,2);
 		}
 		
 	}
@@ -88,7 +95,6 @@ public function bak_copy_file($file,$check){
 	else{
 		$file_source=dirname(dirname(__FILE__))."/".$file;
 		$file_des=$file_source.".bak-plugin";
-		var_dump();
 	}
 	copy($file_source, $file_des); 
 }
