@@ -41,6 +41,9 @@ class AdminExportLimit extends phplistPlugin
 	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_connect)){
 		$this->bak_copy_file($this->file_connect);
 	}
+	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_users)){
+		$this->bak_copy_file($this->file_users);
+	}
 	
 	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_admin)){
 		$this->bak_copy_file($this->file_admin,1);
@@ -52,7 +55,9 @@ class AdminExportLimit extends phplistPlugin
 		$this->bak_copy_file($this->file_connect,1);
 	}
 	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_users)){
+		
 		$this->bak_copy_file($this->file_users,1);
+		
 	}
 	
 	parent::initialise();
