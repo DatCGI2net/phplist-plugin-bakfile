@@ -12,6 +12,9 @@ class AdminExportLimit extends phplistPlugin
   public $file_export="export.php";
   public $file_connect="connect.php";
   public $file_users="users.php";
+  public $file_home="home.php";
+  public $file_admins="admins.php";
+  public $file_adminattributes="adminattributes.php";
  //test update phplist plugins v2..
   public $settings = array(
     "simpleattributeselect_numcriterias" => array (
@@ -44,6 +47,15 @@ class AdminExportLimit extends phplistPlugin
 	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_users)){
 		$this->bak_copy_file($this->file_users);
 	}
+	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_home)){
+		$this->bak_copy_file($this->file_home);
+	}
+	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_admins)){
+		$this->bak_copy_file($this->file_admins);
+	}
+	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_adminattributes)){
+		$this->bak_copy_file($this->file_adminattributes);
+	}
 	
 	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_admin)){
 		$this->bak_copy_file($this->file_admin,1);
@@ -57,6 +69,22 @@ class AdminExportLimit extends phplistPlugin
 	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_users)){
 		
 		$this->bak_copy_file($this->file_users,1);
+		
+	}
+	
+	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_home)){
+		
+		$this->bak_copy_file($this->file_home,1);
+		
+	}
+	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_admins)){
+		
+		$this->bak_copy_file($this->file_admins,1);
+		
+	}
+	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_adminattributes)){
+		
+		$this->bak_copy_file($this->file_adminattributes,1);
 		
 	}
 	
@@ -78,6 +106,16 @@ function activate(){
 		}
 		if (file_exists(dirname(dirname(__FILE__))."/".$this->file_users.".bak-plugin")){
 			$this->bak_copy_file($this->file_users,2);
+		}
+		
+		if (file_exists(dirname(dirname(__FILE__))."/".$this->file_home.".bak-plugin")){
+			$this->bak_copy_file($this->file_home,2);
+		}
+		if (file_exists(dirname(dirname(__FILE__))."/".$this->file_admins.".bak-plugin")){
+			$this->bak_copy_file($this->file_admins,2);
+		}
+		if (file_exists(dirname(dirname(__FILE__))."/".$this->file_adminattributes.".bak-plugin")){
+			$this->bak_copy_file($this->file_adminattributes,2);
 		}
 		
 	}
