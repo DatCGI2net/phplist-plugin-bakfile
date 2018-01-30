@@ -31,7 +31,7 @@ class AdminExportLimit extends phplistPlugin
   function __construct() {
 
 	parent::__construct();
-  }
+  } 
   function initialise() {	
 	file_put_contents("test.log", "active:", FILE_APPEND);
 	//error_log("active");
