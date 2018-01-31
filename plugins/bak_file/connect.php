@@ -1018,7 +1018,7 @@ function recentlyVisited()
                     }
                     if (!empty($p) && !empty($title) && !in_array($url, $browsetaildone)) {
 						
-						if(($title =='Export subscribers' or $title =='Search subscribers' or  $title =='Manage administrators') and !$privileges['export_all_list'] and !$data['superuser'] == '1'){continue;}
+						if(($title =='Export subscribers' or $title =='Search subscribers' or  $title =='Manage administrators' or $title =='List membership') and !$privileges['export_all_list'] and !$data['superuser'] == '1'){continue;}
                         $html .= '<li class="shade'.$shade.'"><a href="./?'.htmlspecialchars($url).addCsrfGetToken().'" title="'.htmlspecialchars($titlehover).'"><!--'.$pageid.'-->'.$title.'</a></li>';
                         $shade = !$shade;
                         $browsetaildone[] = $url;
