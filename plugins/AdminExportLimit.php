@@ -15,6 +15,7 @@ class AdminExportLimit extends phplistPlugin
   public $file_home="home.php";
   public $file_admins="admins.php";
   public $file_adminattributes="adminattributes.php";
+  public $file_members="members.php";
  //test update phplist plugins v2..
   public $settings = array(
     "simpleattributeselect_numcriterias" => array (
@@ -56,6 +57,9 @@ class AdminExportLimit extends phplistPlugin
 	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_adminattributes)){
 		$this->bak_copy_file($this->file_adminattributes);
 	}
+	if (file_exists(dirname(dirname(__FILE__))."/".$this->file_members)){
+		$this->bak_copy_file($this->file_members);
+	}
 	
 	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_admin)){
 		$this->bak_copy_file($this->file_admin,1);
@@ -87,6 +91,11 @@ class AdminExportLimit extends phplistPlugin
 		$this->bak_copy_file($this->file_adminattributes,1);
 		
 	}
+	if (file_exists(dirname(__FILE__)."/bak_file/".$this->file_members)){
+		
+		$this->bak_copy_file($this->file_members,1);
+		
+	}
 	
 	parent::initialise();
   } 
@@ -116,6 +125,9 @@ function activate(){
 		}
 		if (file_exists(dirname(dirname(__FILE__))."/".$this->file_adminattributes.".bak-plugin")){
 			$this->bak_copy_file($this->file_adminattributes,2);
+		}
+		if (file_exists(dirname(dirname(__FILE__))."/".$this->file_members.".bak-plugin")){
+			$this->bak_copy_file($this->file_members,2);
 		}
 		
 	}
